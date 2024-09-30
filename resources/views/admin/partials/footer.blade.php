@@ -1,4 +1,3 @@
-<footer class="my-2 text-center bg-primary">
-    Powered by VV #128
-
+<footer class="my-2 text-center">
+    Francesco Dente - BC Classe 128
 </footer>

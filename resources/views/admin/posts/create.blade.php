@@ -17,6 +17,18 @@
                     @enderror
 
                 </div>
+                {{-- CATEGORY --}}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Categoria (*)</label>
+                    <select name="category_id" class="form-select" aria-label="Default select example" id="category">
+                        <option value="" selected>Seleziona una categoria</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" @if (old('category_id') == $category->id) selected @endif>
+                                {{ $category->name }}</option>
+                        @endforeach
+                    </select>
+
+                </div>
                 {{-- TEXT --}}
                 <div class="mb-3">
                     <label for="text" class="form-label">Descrizione (*)</label>

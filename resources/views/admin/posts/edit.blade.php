@@ -18,6 +18,18 @@
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
+                {{-- Category --}}
+                <div class="mb-3">
+                    <label for="title" class="form-label">Categoria (*)</label>
+                    <select name="category_id" class="form-select" aria-label="Default select example" id="category">
+                        <option value="" selected>Seleziona una categoria</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" @if (old('category_id', $post->category?->id) == $category->id) selected @endif>
+                                {{ $category->name }}</option>
+                        @endforeach
+                    </select>
+
+                </div>
 
                 {{-- TEXT --}}
                 <div class="mb-3">

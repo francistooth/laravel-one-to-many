@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,11 @@ Route::middleware(['auth','verified'])
     ->name('admin.')
     ->group(function(){
         Route::get('/',[DashboardController::class, 'index'])->name('home');
+        Route::get('categories-posts', [CategoryController::class, 'categoryPosts'])->name('categoryPosts');
+        // Rotta per i post
         Route::resource('posts', PostController::class);
+        // Rotta per le categorie
+        Route::resource('categories', CategoryController::class);
     });
 
 

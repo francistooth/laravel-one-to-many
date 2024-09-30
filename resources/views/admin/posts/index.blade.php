@@ -22,7 +22,7 @@
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->created_at }}</td>
-                    {{-- <td><span class="badge text-bg-secondary">{{ $post->category->name }}</span></td> --}}
+                    <td><span class="badge text-bg-success">{{ $post->category?->name }}</span></td>
                     <td>
                         <a class="btn btn-success" href="{{ route('admin.posts.show', ['post' => $post->id]) }}"><i
                                 class="fa-solid fa-eye"></i></a>
